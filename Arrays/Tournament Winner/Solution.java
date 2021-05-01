@@ -23,10 +23,6 @@ class Program {
     }
 
     public void updateWinnerScore(String team, HashMap<String, Integer> scores) {
-        if (!scores.containsKey(team)) {
-            scores.put(team, 3);
-        } else {
-            scores.put(team, scores.get(team) + 3);
-        }
+        scores.merge(team, 3, (v1, v2) -> v1 + v2);
     }
 }
