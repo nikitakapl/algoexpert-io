@@ -22,7 +22,7 @@ class Program {
         return Collections.max(scores.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
-    public void updateWinnerScore(String team, HashMap<String, Integer> scores) {
-        scores.merge(team, 3, (v1, v2) -> v1 + v2);
+    public void updateWinnerScore(team, HashMap<String, Integer> scores) {
+        scores.merge(new String (team), 3, (v1, v2) -> v1 + v2);
     }
 }
