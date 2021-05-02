@@ -30,7 +30,14 @@ class Program {
         }
 
         public boolean contains(int value) {
-            return false;
+            if (value < this.value) {
+                if (left == null) { return false; }
+                left.contains(value);
+            } else if (value > this.value) {
+                if (right == null) { return false; }
+                right.contains(value);
+            }
+            return true; // if value == this.value
         }
 
         public BST remove(int value) {
